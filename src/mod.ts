@@ -1,9 +1,9 @@
-import { DependencyContainer } from "tsyringe";
+import type { DependencyContainer } from "tsyringe";
 
-import { IPostDBLoadMod } from "@spt/models/external/IPostDBLoadMod";
-import { DatabaseService } from "@spt/services/DatabaseService";
-import { ILocations } from "@spt/models/spt/server/ILocations";
-import { IStaticLootDetails, ItemDistribution } from "@spt/models/eft/common/ILocation";
+import type { IPostDBLoadMod } from "@spt/models/external/IPostDBLoadMod";
+import type { DatabaseService } from "@spt/services/DatabaseService";
+import type { ILocations } from "@spt/models/spt/server/ILocations";
+import type { IStaticLootDetails, ItemDistribution } from "@spt/models/eft/common/ILocation";
 import { ItemTpl } from "@spt/models/enums/ItemTpl";
 
 class Mod implements IPostDBLoadMod
@@ -37,7 +37,7 @@ class Mod implements IPostDBLoadMod
             const mapName = locationTable[location].base.Id;
 
             // Adjust Barrel Cache
-            if (staticLoot[ItemTpl.LOOTCONTAINER_BURIED_BARREL_CACHE] != undefined)
+            if (staticLoot[ItemTpl.LOOTCONTAINER_BURIED_BARREL_CACHE] !== undefined)
             {
                 const totalProbability = this.getItemDistributionProbability(staticLoot, ItemTpl.LOOTCONTAINER_BURIED_BARREL_CACHE);
                 const guessChance = this.getGuessChanceOfSpawn(totalProbability);
@@ -46,7 +46,7 @@ class Mod implements IPostDBLoadMod
             }
             
             // Adjust Wood Cache
-            if (staticLoot[ItemTpl.LOOTCONTAINER_GROUND_CACHE] != undefined)
+            if (staticLoot[ItemTpl.LOOTCONTAINER_GROUND_CACHE] !== undefined)
             {
                 const totalProbability = this.getItemDistributionProbability(staticLoot, ItemTpl.LOOTCONTAINER_GROUND_CACHE);
                 const guessChance = this.getGuessChanceOfSpawn(totalProbability);
@@ -55,7 +55,7 @@ class Mod implements IPostDBLoadMod
             }
             
             // Adjust PMC Body Cache
-            if (staticLoot[ItemTpl.LOOTCONTAINER_PMC_BODY] != undefined)
+            if (staticLoot[ItemTpl.LOOTCONTAINER_PMC_BODY] !== undefined)
             {
                 const totalProbability = this.getItemDistributionProbability(staticLoot, ItemTpl.LOOTCONTAINER_PMC_BODY);
                 const guessChance = this.getGuessChanceOfSpawn(totalProbability);
@@ -64,7 +64,7 @@ class Mod implements IPostDBLoadMod
             }
             
             // Adjust Scav Body Cache
-            if (staticLoot[ItemTpl.LOOTCONTAINER_SCAV_BODY] != undefined)
+            if (staticLoot[ItemTpl.LOOTCONTAINER_SCAV_BODY] !== undefined)
             {
                 const totalProbability = this.getItemDistributionProbability(staticLoot, ItemTpl.LOOTCONTAINER_SCAV_BODY);
                 const guessChance = this.getGuessChanceOfSpawn(totalProbability);
@@ -73,7 +73,7 @@ class Mod implements IPostDBLoadMod
             }
 
             // Adjust Scav Body Cache
-            if (staticLoot[ItemTpl.LOOTCONTAINER_DEAD_SCAV] != undefined)
+            if (staticLoot[ItemTpl.LOOTCONTAINER_DEAD_SCAV] !== undefined)
             {
                 const totalProbability = this.getItemDistributionProbability(staticLoot, ItemTpl.LOOTCONTAINER_DEAD_SCAV);
                 const guessChance = this.getGuessChanceOfSpawn(totalProbability);
